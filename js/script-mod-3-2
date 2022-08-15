@@ -64,17 +64,17 @@
 // console.log(hexColors);
 // console.log(rgbColors);
 
-const forecast = {
-  today: {
-    low: 28,
-    high: 32,
-    icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
-  },
-  tomorrow: {
-    low: 27,
-    high: 31,
-  },
-};
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
 // Change code below this line
 
 // const highToday = forecast.today.high;
@@ -294,66 +294,66 @@ const forecast = {
 // console.log(atTheOldToad.addPotion("Invisibility"));
 
 // Рефакторинг лавки зелья
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Dragon breath", price: 780 },
-    { name: "Stone skin", price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
 
-  // Change code below this line
+// Change code below this line
 
-  getPotions() {
-    return this.potions;
-  },
+//   getPotions() {
+//     return this.potions;
+//   },
 
-  addPotion(newPotion) {
-    // debugger;
-    const { potions } = this;
-    for (const potion of potions) {
-      const { name } = potion;
-      const { name: newName } = newPotion;
-      if (name === newName) {
-        return `Error! Potion ${newPotion} is already in your inventory!`;
-      }
-    }
+//   addPotion(newPotion) {
+//     // debugger;
+//     const { potions } = this;
+//     for (const potion of potions) {
+//       const { name } = potion;
+//       const { name: newName } = newPotion;
+//       if (name === newName) {
+//         return `Error! Potion ${newPotion} is already in your inventory!`;
+//       }
+//     }
 
-    potions.push(newPotion);
-    return potions;
-  },
+//     potions.push(newPotion);
+//     return potions;
+//   },
 
-  removePotion(potionName) {
-    // debugger;
-    const { potions } = this;
-    for (let i = 0; i < potions.length; i += 1) {
-      const { name } = potions[i];
-      if (name === potionName) {
-        potions.splice(i, 1);
-        return potions;
-      }
-    }
-    return `Potion ${potionName} is not in inventory!`;
-  },
+//   removePotion(potionName) {
+//     // debugger;
+//     const { potions } = this;
+//     for (let i = 0; i < potions.length; i += 1) {
+//       const { name } = potions[i];
+//       if (name === potionName) {
+//         potions.splice(i, 1);
+//         return potions;
+//       }
+//     }
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
 
-  updatePotionName(oldName, newName) {
-    const { potions } = this;
-    for (let i = 0; i < potions.length; i += 1) {
-      const { name, price } = potions[i];
-      if (name === oldName) {
-        potions.splice(i, 1, { ...potions[i], name: newName });
-        return potions;
-      }
-    }
-    return `Potion ${oldName} is not in inventory!`;
-  },
-  // Change code above this line
-};
+//   updatePotionName(oldName, newName) {
+//     const { potions } = this;
+//     for (let i = 0; i < potions.length; i += 1) {
+//       const { name, price } = potions[i];
+//       if (name === oldName) {
+//         potions.splice(i, 1, { ...potions[i], name: newName });
+//         return potions;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+//   // Change code above this line
+// };
 
 // console.log(atTheOldToad.getPotions());
 
 // console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
-console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
-console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
+// console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
 
 // console.log(atTheOldToad.removePotion("Dragon breath"));
 // console.log(atTheOldToad.removePotion("Dragon ass"));
