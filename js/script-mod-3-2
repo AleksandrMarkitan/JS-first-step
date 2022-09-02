@@ -301,8 +301,6 @@
 //     { name: "Stone skin", price: 520 },
 //   ],
 
-// Change code below this line
-
 //   getPotions() {
 //     return this.potions;
 //   },
@@ -314,7 +312,7 @@
 //       const { name } = potion;
 //       const { name: newName } = newPotion;
 //       if (name === newName) {
-//         return `Error! Potion ${newPotion} is already in your inventory!`;
+//         return `Error! Potion ${name} is already in your inventory!`;
 //       }
 //     }
 
