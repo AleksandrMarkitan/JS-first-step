@@ -45,122 +45,125 @@
 
 // console.log(user);
 
+// ==================================================================
 // Потрібно створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
 // Not found
-let people1 = [
-  {
-    name: "Alex",
-    know: ["Eva", "Jhon"],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Alex"],
-  },
-  {
-    name: "Eva",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Jhon",
-    know: ["Alex"],
-  },
-];
-//Not found
-const people2 = [
-  {
-    name: "Alex",
-    know: ["Eva", "Jhon"],
-  },
-  {
-    name: "Jhon",
-    know: [],
-  },
-  {
-    name: "Eva",
-    know: [],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Alex"],
-  },
-];
+// let people1 = [
+//   {
+//     name: "Alex",
+//     know: ["Eva", "Jhon"],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Alex"],
+//   },
+//   {
+//     name: "Eva",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: ["Alex"],
+//   },
+// ];
+// //Not found
+// const people2 = [
+//   {
+//     name: "Alex",
+//     know: ["Eva", "Jhon"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: [],
+//   },
+//   {
+//     name: "Eva",
+//     know: [],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Alex"],
+//   },
+// ];
 
-// jhon
-const people3 = [
-  {
-    name: "Alex",
-    know: ["Eva", "Jhon"],
-  },
-  {
-    name: "Jhon",
-    know: [],
-  },
-  {
-    name: "Eva",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Alex"],
-  },
-];
+// // jhon
+// const people3 = [
+//   {
+//     name: "Alex",
+//     know: ["Eva", "Jhon"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: [],
+//   },
+//   {
+//     name: "Eva",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Alex"],
+//   },
+// ];
 
-function findePeople(people) {
-  const suspected = people.filter(({ know }) => !know.length);
-  console.log(suspected);
-  if (suspected.length !== 1) {
-    console.log("not found");
-    return;
-  }
-  const narcis = suspected[0].name;
-  console.log(narcis);
-  const responce = people.every(
-    ({ name, know }) => know.includes(narcis) || name === narcis
-  );
+// function findePeople(people) {
+//   const suspected = people.filter(({ know }) => !know.length);
+//   console.log(suspected);
+//   if (suspected.length !== 1) {
+//     console.log("not found");
+//     return;
+//   }
+//   const narcis = suspected[0].name;
+//   console.log(narcis);
+//   const responce = people.every(
+//     ({ name, know }) => know.includes(narcis) || name === narcis
+//   );
 
-  if (responce) {
-    console.log(narcis);
-  } else {
-    console.log("not found");
-  }
-}
+//   if (responce) {
+//     console.log(narcis);
+//   } else {
+//     console.log("not found");
+//   }
+// }
 
-findePeople(people3);
+// findePeople(people3);
 
-people1 = people1.filter(({ know }) => know.includes("Jhon"));
+// people1 = people1.filter(({ know }) => know.includes("Jhon"));
 
-console.log(people1);
+// console.log(people1);
 
-let products = [
-  {
-    id: "sku1",
-    qty: 1,
-  },
-  {
-    id: "sku2",
-    qty: 2,
-  },
-  {
-    id: "sku3",
-    qty: 3,
-  },
-  {
-    id: "sku1",
-    qty: 6,
-  },
-  {
-    id: "sku1",
-    qty: 8,
-  },
-  {
-    id: "sku2",
-    qty: 19,
-  },
-  {
-    id: "sku4",
-    qty: 1,
-  },
-];
+// ================================================================
+
+// let products = [
+//   {
+//     id: "sku1",
+//     qty: 1,
+//   },
+//   {
+//     id: "sku2",
+//     qty: 2,
+//   },
+//   {
+//     id: "sku3",
+//     qty: 3,
+//   },
+//   {
+//     id: "sku1",
+//     qty: 6,
+//   },
+//   {
+//     id: "sku1",
+//     qty: 8,
+//   },
+//   {
+//     id: "sku2",
+//     qty: 19,
+//   },
+//   {
+//     id: "sku4",
+//     qty: 1,
+//   },
+// ];
 
 // Потрібно перебрати масив і якщо він має об'єкти в яких дублюються айді то квонтіті цих елементів потрібно сплюсувати а той обє'кт який співпав видалити з масиву.
 // (Потрібно мутувати даний масив, створювати новий не потрібно)
@@ -202,11 +205,3 @@ let products = [
 
 // products = getNewProductsArr(products);
 // console.log(products);
-
-function changeArray(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    const element = array[i];
-    console.log(element);
-  }
-}
-changeArray(products);
