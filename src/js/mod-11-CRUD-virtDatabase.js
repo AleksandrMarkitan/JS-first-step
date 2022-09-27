@@ -3,7 +3,7 @@
 // "server": "json-server --watch db.json"
 // запуск сервера:  npm run server
 
-const BASE_URL = 'http://localhost:3000/cars';
+const BASE_URL = 'http://localhost:1234/cars';
 
 const newCar1 = {
   car: 'Tesla',
@@ -69,9 +69,31 @@ function deleteCarById(...ids) {
   }
 }
 
+function getCar(id) {
+  console.log(id);
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+  return fetch(`${BASE_URL}/${id}`, options).then(resp => {
+    if (!resp.ok) {
+      throw new Error(resp.statusText);
+    }
+    return resp.json;
+  });
+}
+
 // addCar(newCar1).then(console.log).catch(error=>console.log(error));
 // addCar(newCar2).then(console.log).catch(error=>console.log(error));
 
 // updateCarById(changeCar1, 8).then(console.log).catch(error=>console.log(error));
 
 // deleteCarById(8, 10, 11, 12, 13, 14, 15).then(console.log).catch(error=>console.log(error));
+
+console.log(
+  getCar(5)
+    .then(console.log)
+    .catch(error => console.log(error))
+);
