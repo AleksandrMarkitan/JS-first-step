@@ -168,3 +168,109 @@
 // console.log(mango.changePassword(111));
 // console.log(mango);
 // console.log(User);
+
+function minAge(a, b) {
+  minAge = this.age / a + b;
+  console.log('for', this.name, '-', minAge);
+}
+
+console.log(minAge.prototype);
+
+const obj1 = {
+  name: 'Sasha',
+  age: 42,
+};
+const obj2 = {
+  name: 'Serg',
+  age: 30,
+  showMinAge: minAge,
+};
+const obj3 = {
+  name: 'Vasja',
+  age: 20,
+  showMinAge: minAge,
+};
+
+obj1.showMinAge = minAge;
+
+obj1.showMinAge(2, 7);
+
+const hotel = {
+  username: 'Resort hotel',
+  showThis() {
+    const foo = () => {
+      // Стрелки запоминают контекст во время объявления,
+      // из родительской области видимости
+      console.log('this in foo: ', this);
+    };
+
+    foo();
+    console.log('this in showThis: ', this);
+  },
+};
+
+console.log(hotel.showThis.prototype);
+
+hotel.showThis();
+// this in foo: {username: 'Resort hotel', showThis: ƒ}
+// this in showThis: {username: 'Resort hotel',showThis: ƒ}
+
+const [first, , third] = 'hello sweet world'.split(' ');
+console.log(first, third);
+
+let b = 20;
+
+if (true) {
+  console.log(b);
+  // let b = 10;
+}
+
+const MAX = 10;
+let amount = 0;
+let sum = 0;
+
+while (amount++ < MAX) {
+  sum = amount;
+}
+
+console.log(sum);
+
+const {
+  name,
+  age,
+  gender = 'm',
+  hairColor: color,
+} = {
+  name: 'bob',
+  age: 20,
+  hairColor: 'blue',
+};
+
+console.log(name, age, gender, color);
+
+const array = [1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 0, 6];
+const mySet = new Set(array);
+console.log(mySet);
+console.log(mySet.has(0));
+const mySetArray = [...mySet];
+console.log(mySetArray);
+
+const Class = function ({ own, two } = {}) {
+  this.own = own;
+  this.two = two;
+};
+
+console.log(Class.prototype);
+
+Class.prototype.changeOne = function (newOwn) {
+  this.own = newOwn;
+};
+
+console.log(Class.prototype);
+
+const myClass = new Class({ own: 10, two: 20 });
+
+console.log(myClass);
+
+myClass.changeOne(100);
+console.log(myClass);

@@ -70,7 +70,7 @@ function deleteCarById(...ids) {
 }
 
 function getCar(id) {
-  console.log(id);
+  // console.log(id);
   const options = {
     method: 'GET',
     headers: {
@@ -92,8 +92,8 @@ function getCar(id) {
 
 // deleteCarById(8, 10, 11, 12, 13, 14, 15).then(console.log).catch(error=>console.log(error));
 
-console.log(
-  getCar(5)
-    .then(console.log)
-    .catch(error => console.log(error))
-);
+// console.log(
+//   getCar(5)
+//     .then(console.log)
+//     .catch(error => console.log(error))
+// );
